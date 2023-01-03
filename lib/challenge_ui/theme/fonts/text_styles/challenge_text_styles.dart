@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 //TODO: TextTheme3
 class ChallengeTextStyles {
   static final headlineSmall = GoogleFonts.roboto(
-    fontSize: 24,
-    fontWeight: FontWeight.w600,
+    fontSize: 28,
+    fontWeight: FontWeight.bold,
     color: ChallengeColors.black,
   );
   static final titleLarge = GoogleFonts.roboto(
@@ -14,20 +14,20 @@ class ChallengeTextStyles {
     fontWeight: FontWeight.bold,
     color: ChallengeColors.black,
   );
-  static final titleMedium = GoogleFonts.nunito(
+  static final titleMedium = GoogleFonts.roboto(
     fontSize: 16,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w500,
     color: ChallengeColors.black,
   );
-  static final titleSmall = GoogleFonts.nunito(
+  static final titleSmall = GoogleFonts.roboto(
     fontSize: 14,
     fontWeight: FontWeight.w600,
-    color: ChallengeColors.grey,
+    color: ChallengeColors.deepGrey,
   );
   static final bodyLarge = GoogleFonts.roboto(
     fontSize: 16,
     fontWeight: FontWeight.bold,
-    color: ChallengeColors.grey,
+    color: ChallengeColors.deepGrey,
   );
 }
 
