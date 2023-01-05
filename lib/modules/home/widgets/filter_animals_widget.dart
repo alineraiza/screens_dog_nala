@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FilterAnimalsWidget extends StatelessWidget {
-  final String title;
-  final FaIcon icon;
+  final String? title;
+  final Widget icon;
 
-  const FilterAnimalsWidget({super.key,
-    required this.title, 
+  const FilterAnimalsWidget({
+    super.key,
+    this.title,
     required this.icon,
   });
 
@@ -14,16 +14,24 @@ class FilterAnimalsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      width: 100,
       decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
-          color: Theme.of(context).colorScheme.onSecondary),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          icon,
-          Text(title),
-        ],
+        borderRadius: const BorderRadius.all(Radius.circular(20)),
+        color: Theme.of(context).colorScheme.onSecondary,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            icon,
+            const SizedBox(width: 12,),
+            if (title != null)
+              Text(
+                title!,
+                style: Theme.of(context).textTheme.titleMedium,
+              )
+          ],
+        ),
       ),
     );
   }

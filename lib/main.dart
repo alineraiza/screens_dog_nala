@@ -18,6 +18,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-//TODO: Corrigir nome dos assets; Fazer o ThemeData
-

@@ -1,10 +1,13 @@
 import 'package:challenge_2/challenge_ui/theme/colors/challenge_colors.dart';
+import 'package:challenge_2/challenge_ui/theme/fonts/text_styles/challenge_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class ChallengeThemeData {
-  static final lightTheme = ThemeData(
+  static final _base = ThemeData.light();
+  static final lightTheme = _base.copyWith(
     backgroundColor: ChallengeColors.white,
-    colorScheme: const ColorScheme.light(
+    primaryColor: ChallengeColors.white,
+    colorScheme: _base.colorScheme.copyWith(
       primary: ChallengeColors.white,
       secondary: ChallengeColors.red,
       surface: ChallengeColors.white,
@@ -12,6 +15,14 @@ class ChallengeThemeData {
       onSurface: ChallengeColors.black,
       onPrimary: ChallengeColors.deepGrey,
       onSecondary: ChallengeColors.white,
-    )
+    ), 
+    // TODO (Aline): Terminar de configurar os TextTheme e usar no restante do app.
+    textTheme: TextTheme(
+      headlineSmall: ChallengeTextStyles.headlineSmall,
+      titleLarge: ChallengeTextStyles.titleLarge,
+      titleMedium: ChallengeTextStyles.titleMedium,
+      titleSmall: ChallengeTextStyles.titleSmall,
+      bodyLarge: ChallengeTextStyles.bodyLarge,
+    ),
   );
 }

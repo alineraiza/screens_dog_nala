@@ -2,7 +2,6 @@ import 'package:challenge_2/challenge_ui/theme/colors/challenge_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//TODO: TextTheme3
 class ChallengeTextStyles {
   static final headlineSmall = GoogleFonts.roboto(
     fontSize: 28,
@@ -30,4 +29,3 @@ class ChallengeTextStyles {
     color: ChallengeColors.deepGrey,
   );
 }
-

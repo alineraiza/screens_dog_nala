@@ -1,7 +1,7 @@
 import 'package:challenge_2/challenge_ui/theme/fonts/text_styles/challenge_text_styles.dart';
 import 'package:flutter/material.dart';
 
-class CardsAnimalsWidget extends StatefulWidget {
+class CardAnimalWidget extends StatefulWidget {
   final Image image;
   final Color backgroundColorImage;
   final String name;
@@ -9,31 +9,34 @@ class CardsAnimalsWidget extends StatefulWidget {
   final String details;
   final String km;
 
-  const CardsAnimalsWidget(
+  const CardAnimalWidget(
       {super.key,
       required this.image,
       required this.backgroundColorImage,
       required this.name,
       required this.breed,
       required this.details,
-      required this.km});
+      required this.km,});
 
   @override
-  State<CardsAnimalsWidget> createState() => _CardsAnimalsWidgetState();
+  State<CardAnimalWidget> createState() => _CardAnimalWidgetState();
 }
 
-class _CardsAnimalsWidgetState extends State<CardsAnimalsWidget> {
+class _CardAnimalWidgetState extends State<CardAnimalWidget> {
   @override
   Widget build(BuildContext context) {
+    //TODO(Aline): Usar a variável do theme.
+    final theme = Theme.of(context);
+
     return Container(
       height: 150,
       width: 350,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(21)),
-        color: Theme.of(context).colorScheme.onSecondary,
+        color: theme.colorScheme.onSecondary,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.all(12),
         child: Row(
           children: [
             Container(
@@ -45,24 +48,25 @@ class _CardsAnimalsWidgetState extends State<CardsAnimalsWidget> {
               ),
               child: widget.image,
             ),
-            const SizedBox(width: 37,),
+            const SizedBox(width: 18,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
-                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(widget.name, style: ChallengeTextStyles.headlineSmall),
-                    const SizedBox(width: 55,),
-                    Icon(Icons.favorite, size: 32, color: Theme.of(context).colorScheme.secondary,)
+                    const SizedBox(width: 75,),
+                    Icon(Icons.favorite, size: 32, 
+                      color: Theme.of(context).colorScheme.secondary,)
                   ],
                 ), 
                 Text(widget.breed, style: ChallengeTextStyles.titleMedium,), 
                 Text(widget.details, style: ChallengeTextStyles.bodyLarge,),
                 const SizedBox(height: 20,),
                 Row(children: [
-                  Icon(Icons.room, size: 18, color: Theme.of(context).colorScheme.secondary,),
+                  Icon(Icons.room, size: 18, 
+                    color: Theme.of(context).colorScheme.secondary,),
                   Text(widget.km, style: ChallengeTextStyles.titleSmall,)
                 ],)
               ],
