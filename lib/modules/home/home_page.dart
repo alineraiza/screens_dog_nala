@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO(Aline): Usar a appBar (header).
+    //TODO(Aline): Usar a appBar (header) - preferenceSize.
     return Scaffold(
       body: SafeArea(
         child: Column(
