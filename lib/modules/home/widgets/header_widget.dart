@@ -39,8 +39,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
               ),
               const CircleAvatar(
                 radius: 32,
-                //TODO(Aline): Chamar igual em colors. Não deixar como string.
-                backgroundImage: AssetImage(ChallengeAssets.lisa2),
+                backgroundImage: AssetImage(ChallengeAssets.lisa),
               ),
             ],
           ),

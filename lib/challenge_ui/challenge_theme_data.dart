@@ -12,17 +12,21 @@ class ChallengeThemeData {
       secondary: ChallengeColors.red,
       surface: ChallengeColors.white,
       tertiary: ChallengeColors.grey,
+      onTertiary: ChallengeColors.darkGrey,
       onSurface: ChallengeColors.black,
       onPrimary: ChallengeColors.deepGrey,
       onSecondary: ChallengeColors.white,
     ), 
     // TODO (Aline): Terminar de configurar os TextTheme e usar no restante do app.
     textTheme: TextTheme(
+      headlineLarge: ChallengeTextStyles.headlineLarge,
       headlineSmall: ChallengeTextStyles.headlineSmall,
       titleLarge: ChallengeTextStyles.titleLarge,
       titleMedium: ChallengeTextStyles.titleMedium,
       titleSmall: ChallengeTextStyles.titleSmall,
       bodyLarge: ChallengeTextStyles.bodyLarge,
+      bodyMedium: ChallengeTextStyles.bodyMedium,
+      // bodyMedium: ChallengeTextStyles.bodyMedium,
     ),
   );
 }

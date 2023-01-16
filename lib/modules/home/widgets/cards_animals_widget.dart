@@ -1,4 +1,5 @@
 import 'package:challenge_2/challenge_ui/theme/fonts/text_styles/challenge_text_styles.dart';
+import 'package:challenge_2/modules/details_animal/details_animal_page.dart';
 import 'package:flutter/material.dart';
 
 class CardAnimalWidget extends StatefulWidget {
@@ -10,6 +11,7 @@ class CardAnimalWidget extends StatefulWidget {
   final String km;
 
   const CardAnimalWidget({
+    //TODO (Aline): Super.key pesquisar.
     super.key,
     required this.image,
     required this.backgroundColorImage,
@@ -28,12 +30,13 @@ class _CardAnimalWidgetState extends State<CardAnimalWidget> {
   Widget build(BuildContext context) {
     //TODO(Aline): Usar a variável do theme.
     final theme = Theme.of(context);
-    const isFavorite = false;
 
     return Column(
       children: [
         GestureDetector(
-          onTap: () => print('object'),
+          onTap: () => Navigator
+          .push(context, MaterialPageRoute(builder: (context) =>
+          const DetailsAnimalPage(),),),
           child: Container(
             height: 150,
             width: 350,
@@ -46,8 +49,8 @@ class _CardAnimalWidgetState extends State<CardAnimalWidget> {
               child: Row(
                 children: [
                   Container(
-                    height: 100,
-                    width: 100,
+                    height: 120,
+                    width: 120,
                     decoration: BoxDecoration(
                       borderRadius: const BorderRadius.all(Radius.circular(16)),
                       color: widget.backgroundColorImage,
@@ -59,27 +62,28 @@ class _CardAnimalWidgetState extends State<CardAnimalWidget> {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            widget.name,
-                            style: ChallengeTextStyles.headlineSmall,
-                          ),
-                          IconButton(
-                            onPressed: () { 
-                              setState(() {
-                                isFavorite != isFavorite;
-                              });
-                             },
-                            icon: isFavorite == true
-                            ? Icon(Icons.favorite, 
-                              color: theme.colorScheme.secondary,)
-                            : const Icon(Icons.favorite_border),
-                            iconSize: 32,
-                          ),
-                        ],
+                      SizedBox(
+                        width: 185,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              widget.name,
+                              style: ChallengeTextStyles.headlineSmall,
+                            ),
+                            IconButton(
+                              onPressed: () { 
+                                setState(() {
+                                 
+                                });
+                               },
+                              icon: Icon(Icons.favorite_border, 
+                              color: theme.colorScheme.onTertiary ,),
+                              iconSize: 32,
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 75,

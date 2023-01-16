@@ -34,6 +34,7 @@ class HomePage extends StatelessWidget {
                         height: 60,
                         child: ListView.builder(
                           scrollDirection: Axis.horizontal,
+                          // TODO(Aline): corrigir listView.
                           itemCount: 1,
                           itemBuilder: (context, index) {
                             return Container(
@@ -68,6 +69,7 @@ class HomePage extends StatelessWidget {
                     SliverList(
                       delegate: SliverChildBuilderDelegate(
                         (context, index) {
+                          // TODO(Aline): Corrigir builder.
                           return Container(
                             alignment: Alignment.center,
                             height: 890,
@@ -79,8 +81,8 @@ class HomePage extends StatelessWidget {
                                   details: 'Female, 8 months old',
                                   km: '2.5 kms away',
                                   image: Image(
-                                    image:
-                                        ChallengeAssets.backGroundLightYellow,
+                                    image:AssetImage(
+                                      ChallengeAssets.backGroundLightYellow,),
                                   ),
                                   backgroundColorImage: ChallengeColors.yellow,
                                 ),
@@ -93,7 +95,8 @@ class HomePage extends StatelessWidget {
                                   details: 'Female, 2 years old',
                                   km: '2.9 kms away',
                                   image: Image(
-                                      image: ChallengeAssets.backGroundWhite,),
+                                      image: AssetImage(
+                                        ChallengeAssets.backGroundWhite,),),
                                   backgroundColorImage: ChallengeColors.white,
                                 ),
                                 SizedBox(
@@ -105,7 +108,8 @@ class HomePage extends StatelessWidget {
                                   details: 'Male, 1.5 years old',
                                   km: '2.6 kms away',
                                   image: Image(
-                                    image: ChallengeAssets.backGroundLightGreen,
+                                    image: AssetImage(
+                                      ChallengeAssets.backGroundLightGreen,),
                                   ),
                                   backgroundColorImage:
                                       ChallengeColors.greenWater,
@@ -119,7 +123,8 @@ class HomePage extends StatelessWidget {
                                   details: 'Male, 1 years old',
                                   km: '2.9 kms away',
                                   image: Image(
-                                      image: ChallengeAssets.backGroundBlue,),
+                                      image: AssetImage(
+                                        ChallengeAssets.backGroundBlue,),),
                                   backgroundColorImage: ChallengeColors.blue,
                                 ),
                                 SizedBox(
@@ -131,7 +136,8 @@ class HomePage extends StatelessWidget {
                                   details: 'Female, 7 months old',
                                   km: '2.9 kms away',
                                   image: Image(
-                                      image: ChallengeAssets.backGroundPink,),
+                                      image: AssetImage(
+                                          ChallengeAssets.backGroundPink,),),
                                   backgroundColorImage: ChallengeColors.orange,
                                 ),
                                 SizedBox(

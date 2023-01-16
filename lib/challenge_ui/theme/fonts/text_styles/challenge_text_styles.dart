@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChallengeTextStyles {
+  static final headlineLarge = GoogleFonts.roboto(
+    fontSize: 38,
+    fontWeight: FontWeight.bold,
+    color: ChallengeColors.black,
+  );
   static final headlineSmall = GoogleFonts.roboto(
     fontSize: 28,
     fontWeight: FontWeight.bold,
@@ -24,8 +29,13 @@ class ChallengeTextStyles {
     color: ChallengeColors.deepGrey,
   );
   static final bodyLarge = GoogleFonts.roboto(
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     color: ChallengeColors.deepGrey,
+  );
+  static final bodyMedium = GoogleFonts.roboto(
+    fontSize: 22,
+    fontWeight: FontWeight.w900,
+    color: ChallengeColors.white,
   );
 }
