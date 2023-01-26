@@ -10,17 +10,16 @@ class CardsAnimalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = CardsAnimalsList();
     return SizedBox(
       height: 500,
       child: CustomScrollView(
         slivers: [
           SliverList(
             delegate: SliverChildBuilderDelegate(
-              childCount: list.cardAnimalsList.length,
+              childCount: CardsAnimalMock.cardAnimals.length,
               (context, index) {
                 return CardAnimalButtonWidget(
-                  cardAnimalModel: list.cardAnimalsList[index],
+                  cardAnimalModel: CardsAnimalMock.cardAnimals[index],
                   onTap: () {
                     Navigator.push(
                       context,
@@ -38,9 +37,8 @@ class CardsAnimalWidget extends StatelessWidget {
     );
   }
 }
- //TODO (Aline): Corrigir nome Classe e variavel;
-class CardsAnimalsList {
-  List<CardAnimalModel> cardAnimalsList = [
+class CardsAnimalMock {
+  static List<CardAnimalModel> cardAnimals = [
     CardAnimalModel(
       name: 'Sparky',
       breed: 'Golden Retriever',

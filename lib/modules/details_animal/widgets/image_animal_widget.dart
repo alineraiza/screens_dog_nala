@@ -8,7 +8,6 @@ class ImageAnimalWidget extends StatelessWidget {
     required this.listImage,
   });
 
-  // TODO(Aline): Usar uma lista, bildando automaticamente.
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);

@@ -1,15 +1,8 @@
 import 'package:challenge_2/challenge_ui/theme/fonts/text_styles/challenge_text_styles.dart';
 import 'package:challenge_2/models/card_animal_model.dart';
-import 'package:challenge_2/modules/details_animal/details_animal_page.dart';
 import 'package:flutter/material.dart';
 
 class CardAnimalButtonWidget extends StatefulWidget {
-  // final Image image;
-  // final Color backgroundColorImage;
-  // final String name;
-  // final String breed;
-  // final String details;
-  // final String km;
   final Function() onTap;
   final CardAnimalModel cardAnimalModel;
 
@@ -17,12 +10,6 @@ class CardAnimalButtonWidget extends StatefulWidget {
     super.key, 
     required this.onTap, 
     required this.cardAnimalModel,
-    // required this.image,
-    // required this.backgroundColorImage,
-    // required this.name,
-    // required this.breed,
-    // required this.details,
-    // required this.km,
   });
 
   @override
@@ -37,12 +24,6 @@ class _CardAnimalButtonWidgetState extends State<CardAnimalButtonWidget> {
     return Column(
       children: [
         GestureDetector(
-          // onTap: () => Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => const DetailsAnimalPage(),
-          //   ),
-          // ),
           onTap: widget.onTap,
           child: Padding(
             padding: const EdgeInsets.only(top: 3, bottom: 3),
@@ -107,12 +88,11 @@ class _CardAnimalButtonWidgetState extends State<CardAnimalButtonWidget> {
                         ),
                         Text(
                           widget.cardAnimalModel.breed,
-                          //TODO(Aline): Usar Theme;
-                          style: ChallengeTextStyles.titleMedium,
+                          style: theme.textTheme.titleMedium,
                         ),
                         Text(
                           widget.cardAnimalModel.details,
-                          style: ChallengeTextStyles.bodyLarge,
+                          style: theme.textTheme.bodyLarge,
                         ),
                         const SizedBox(
                           height: 20,
@@ -126,7 +106,7 @@ class _CardAnimalButtonWidgetState extends State<CardAnimalButtonWidget> {
                             ),
                             Text(
                               widget.cardAnimalModel.km,
-                              style: ChallengeTextStyles.titleSmall,
+                              style: theme.textTheme.titleSmall,
                             )
                           ],
                         )

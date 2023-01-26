@@ -12,7 +12,6 @@ class FilterAnimalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = FilterAnimalMock();
     return 
     SizedBox(
       height: 45,

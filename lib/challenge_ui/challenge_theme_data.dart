@@ -17,7 +17,6 @@ class ChallengeThemeData {
       onPrimary: ChallengeColors.deepGrey,
       onSecondary: ChallengeColors.white,
     ), 
-    // TODO (Aline): Terminar de configurar os TextTheme e usar no restante do app.
     textTheme: TextTheme(
       headlineLarge: ChallengeTextStyles.headlineLarge,
       headlineSmall: ChallengeTextStyles.headlineSmall,

@@ -2,7 +2,6 @@ import 'package:challenge_2/challenge_ui/theme/assets/challenge_assets.dart';
 import 'package:challenge_2/challenge_ui/theme/fonts/text_styles/challenge_text_styles.dart';
 import 'package:flutter/material.dart';
 
-//TODO(Aline): USAR COMO APPBAR.
 class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
   final double size;
   const HeaderWidget({Key? key, required this.size}) : super(key: key);
