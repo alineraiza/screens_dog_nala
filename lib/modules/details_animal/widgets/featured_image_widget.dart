@@ -12,14 +12,24 @@ class FeaturedImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(600)),
-        color: backGroundBigImage,
-      ),
-      height: 350,
-      width: 350,
-      child: bigImage,
-    );
+    return Stack(
+      children:[ 
+        Center(
+          child: Container(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.all(Radius.circular(600)),
+            color: backGroundBigImage,
+          ),
+          height: 380,
+          width: 380,
+              ),
+        ),
+      Positioned(
+        top: -290,
+        left: -70,
+        right: -90,
+        child: bigImage,
+      )
+    ],);
   }
 }

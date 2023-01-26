@@ -1,5 +1,4 @@
 
-//TODO: Correção para string
 class ChallengeAssets {
   static const lisa = 'assets/images/lisa.jpg';
   static const backGroundBlue = 'assets/images/background_blue.png';

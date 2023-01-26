@@ -1,38 +1,51 @@
+import 'package:challenge_2/models/filter_animal_model.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class FilterAnimalsWidget extends StatelessWidget {
-  final String? title;
-  final Widget icon;
+import 'filter_animals_button_widget.dart';
 
-  const FilterAnimalsWidget({
+class FilterAnimalWidget extends StatelessWidget {
+
+  const FilterAnimalWidget({
     super.key,
-    this.title,
-    required this.icon,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(20)),
-        color: Theme.of(context).colorScheme.onSecondary,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            icon,
-            const SizedBox(width: 12,),
-            if (title != null)
-              Text(
-                title!,
-                style: Theme.of(context).textTheme.titleMedium,
-              )
-          ],
-        ),
+    final list = FilterAnimalMock();
+    return 
+    SizedBox(
+      height: 45,
+      child: CustomScrollView(
+        scrollDirection: Axis.horizontal,
+        slivers: [
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              childCount: FilterAnimalMock.filterAnimals.length,
+              (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.only(
+                    right: 20,
+                  ),
+                  child: FilterAnimalsButtonWidget(
+                    filterAnimalsModel: FilterAnimalMock.filterAnimals[index],
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
+}
+
+class FilterAnimalMock {
+  static List<FilterAnimalModel>  filterAnimals = [
+    FilterAnimalModel(id: 0, icon: const FaIcon(FontAwesomeIcons.filter)),
+    FilterAnimalModel(id: 1, icon: const FaIcon(FontAwesomeIcons.dog), title: 'Dogs'),
+    FilterAnimalModel(id: 2, icon:const FaIcon(FontAwesomeIcons.cat), title: 'Cats'),
+    FilterAnimalModel(id: 3, icon: const FaIcon(FontAwesomeIcons.crow), title: 'Birds'),
+    FilterAnimalModel(id: 4, icon: const FaIcon(FontAwesomeIcons.hippo), title: 'Hippo'),
+  ];
 }

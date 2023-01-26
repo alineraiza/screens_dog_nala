@@ -3,48 +3,53 @@ import 'package:challenge_2/challenge_ui/theme/fonts/text_styles/challenge_text_
 import 'package:flutter/material.dart';
 
 //TODO(Aline): USAR COMO APPBAR.
-class HeaderWidget extends StatefulWidget {
-  const HeaderWidget({super.key});
+class HeaderWidget extends StatelessWidget implements PreferredSizeWidget {
+  final double size;
+  const HeaderWidget({Key? key, required this.size}) : super(key: key);
 
-  @override
-  State<HeaderWidget> createState() => _HeaderWidgetState();
-}
-
-class _HeaderWidgetState extends State<HeaderWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    final size = MediaQuery.of(context).size;
+    return SizedBox(
+      height: size.width * 0.998,
+      child: AppBar(
+        elevation: 0,
+          leading: Padding(
+            padding: EdgeInsets.only(
+              left: size.width * 0.069,),
+            child: const Icon(
+              Icons.menu_rounded,
+              size: 35,
+            ),
+          ),
+          title: Column(
             children: [
-              const Icon(
-                Icons.menu_rounded,
-                size: 35,
-                // color: 
-              ),
-              Column(
-                children: [
-                  Text(
-                    'Location',
-                    style: ChallengeTextStyles.bodyLarge
+              Padding(
+                padding: EdgeInsets.only(
+                  left: size.width * 0.042, 
                   ),
-                  Text(
-                    'Cameron St., Boston',
-                    style: ChallengeTextStyles.titleLarge,
-                  ),
-                ],
+                child: Text('Location', style: ChallengeTextStyles.bodyLarge),
               ),
-              const CircleAvatar(
-                radius: 32,
-                backgroundImage: AssetImage(ChallengeAssets.lisa),
+              Padding(
+                padding: EdgeInsets.only(left: size.width * 0.072, 
+                ),
+                child: Text(
+                  'Cameron St., Boston',
+                  style: ChallengeTextStyles.titleLarge,
+                ),
               ),
             ],
           ),
-        ],
-      ),
+          actions: const [
+            CircleAvatar(
+              radius: 32,
+              backgroundImage: AssetImage(ChallengeAssets.lisa),
+            ),
+          ],),
     );
   }
+  
+  @override
+  Size get preferredSize => Size.fromHeight(size);
+  
 }
