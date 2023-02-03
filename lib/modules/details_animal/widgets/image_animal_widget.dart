@@ -1,74 +1,69 @@
 import 'package:flutter/material.dart';
 
 class ImageAnimalWidget extends StatelessWidget {
-  final Image imageOne;
-  final Image imageTwo;
-  final Image imageThree;
-  final Image imageFour;
-  final Image bigImage;
-  final Color backGroundBigImage;
+  final List<String> listImage;
 
-  const ImageAnimalWidget({super.key,
-    required this.imageOne, 
-    required this.imageTwo, 
-    required this.imageThree, 
-    required this.imageFour, 
-    required this.bigImage, 
-    required this.backGroundBigImage
+  const ImageAnimalWidget({
+    super.key,
+    required this.listImage,
   });
 
   @override
   Widget build(BuildContext context) {
-     final theme = Theme.of(context);
-    return Row(
-      children: [
-        Column(
-          children: [
-            Container(
-              color: theme.colorScheme.surface,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))
+    final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
+    
+    return SizedBox(
+      height: 390,
+      width: 120,
+      child: Stack(
+        children:[ 
+          ListView.separated(
+          padding: EdgeInsets.all(size.width * 0.042),
+          itemCount: listImage.length,
+          separatorBuilder: (BuildContext context, int index) { 
+            return SizedBox(height: size.width * 0.045,);
+           },
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+                color: theme.colorScheme.surface,
+                border: Border.all(
+                  width: 2,
+                  color: theme.colorScheme.onPrimary,
+                ),
               ),
-              height: 50,
-              width: 50,
-              child: imageOne,
-            ),
-            Container(
-              color: theme.colorScheme.surface,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))
+              height: 80,
+              width: 80,
+              child: Image(
+                image: AssetImage(
+                  listImage[index],
+                ),
               ),
-              height: 50,
-              width: 50,
-              child: imageTwo,
-            ),
-            Container(
-              color: theme.colorScheme.surface,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))
-              ),
-              height: 50,
-              width: 50,
-              child: imageThree,
-            ),
-            Container(
-              color: theme.colorScheme.surface,
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))
-              ),
-              height: 50,
-              width: 50,
-              child: imageFour,
-            ),
-          ],
+            );
+          }, 
         ),
-        Container(
-          color: backGroundBigImage,
-          height: 100,
-          width: 80,
-          child: bigImage,
+        Positioned(
+          top: 330,
+          left: 10,
+          child: Container(
+              height: 80,
+              width: 100,
+              decoration:  const BoxDecoration(
+                gradient:  LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: <Color> [
+                    Color.fromARGB(0, 255, 255, 255),
+                    Color.fromARGB(255, 255, 254, 254),
+                    Color.fromARGB(220, 250, 243, 243),
+                  ],
+                ),
+              ),
+            ),
         ),
-      ],
+      ],),
     );
   }
 }
