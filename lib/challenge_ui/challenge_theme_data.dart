@@ -16,7 +16,7 @@ class ChallengeThemeData {
       onSurface: ChallengeColors.black,
       onPrimary: ChallengeColors.deepGrey,
       onSecondary: ChallengeColors.white,
-    ), 
+    ),
     textTheme: TextTheme(
       headlineLarge: ChallengeTextStyles.headlineLarge,
       headlineSmall: ChallengeTextStyles.headlineSmall,
@@ -25,7 +25,6 @@ class ChallengeThemeData {
       titleSmall: ChallengeTextStyles.titleSmall,
       bodyLarge: ChallengeTextStyles.bodyLarge,
       bodyMedium: ChallengeTextStyles.bodyMedium,
-      // bodyMedium: ChallengeTextStyles.bodyMedium,
     ),
   );
 }
