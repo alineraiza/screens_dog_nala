@@ -2,18 +2,16 @@ import 'package:challenge_2/models/filter_animal_model.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import 'filter_animals_button_widget.dart';
+import 'filter_animal_button_widget.dart';
 
 class FilterAnimalWidget extends StatelessWidget {
-
   const FilterAnimalWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return 
-    SizedBox(
+    return SizedBox(
       height: 45,
       child: CustomScrollView(
         scrollDirection: Axis.horizontal,
@@ -40,11 +38,27 @@ class FilterAnimalWidget extends StatelessWidget {
 }
 
 class FilterAnimalMock {
-  static List<FilterAnimalModel>  filterAnimals = [
+  static List<FilterAnimalModel> filterAnimals = [
     FilterAnimalModel(id: 0, icon: const FaIcon(FontAwesomeIcons.filter)),
-    FilterAnimalModel(id: 1, icon: const FaIcon(FontAwesomeIcons.dog), title: 'Dogs'),
-    FilterAnimalModel(id: 2, icon:const FaIcon(FontAwesomeIcons.cat), title: 'Cats'),
-    FilterAnimalModel(id: 3, icon: const FaIcon(FontAwesomeIcons.crow), title: 'Birds'),
-    FilterAnimalModel(id: 4, icon: const FaIcon(FontAwesomeIcons.hippo), title: 'Hippo'),
+    FilterAnimalModel(
+      id: 1,
+      icon: const FaIcon(FontAwesomeIcons.dog),
+      title: 'Dogs',
+    ),
+    FilterAnimalModel(
+      id: 2,
+      icon: const FaIcon(FontAwesomeIcons.cat),
+      title: 'Cats',
+    ),
+    FilterAnimalModel(
+      id: 3,
+      icon: const FaIcon(FontAwesomeIcons.crow),
+      title: 'Birds',
+    ),
+    FilterAnimalModel(
+      id: 4,
+      icon: const FaIcon(FontAwesomeIcons.hippo),
+      title: 'Hippo',
+    ),
   ];
 }

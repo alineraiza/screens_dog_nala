@@ -2,16 +2,18 @@ import 'package:challenge_2/challenge_ui/theme/assets/challenge_assets.dart';
 import 'package:challenge_2/challenge_ui/theme/colors/challenge_colors.dart';
 import 'package:challenge_2/models/card_animal_model.dart';
 import 'package:challenge_2/modules/details_animal/details_animal_page.dart';
-import 'package:challenge_2/modules/home/widgets/cards_animals_button_widget.dart';
+import 'package:challenge_2/modules/home/widgets/card_animal_button_widget.dart';
 import 'package:flutter/material.dart';
 
-class CardsAnimalWidget extends StatelessWidget {
-  const CardsAnimalWidget({super.key});
+class CardAnimalWidget extends StatelessWidget {
+  const CardAnimalWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return SizedBox(
-      height: 500,
+      height: size.height - 200,
       child: CustomScrollView(
         slivers: [
           SliverList(
@@ -37,71 +39,73 @@ class CardsAnimalWidget extends StatelessWidget {
     );
   }
 }
+
 class CardsAnimalMock {
   static List<CardAnimalModel> cardAnimals = [
     CardAnimalModel(
-      name: 'Sparky',
-      breed: 'Golden Retriever',
-      details: 'Female, 8 months old',
-      km: '2.5 kms away',
+      name: 'Nala Sonolenta',
+      day: 'Humana me deixa',
+      details: 'Female, 2 years old',
+      km: 'Sala',
       image: const Image(
         image: AssetImage(
-          ChallengeAssets.imageThree,
+          ChallengeAssets.nalaThree,
         ),
       ),
-      backgroundColorImage: ChallengeColors.yellow,
+      backgroundColorImage: ChallengeColors.greenWater,
       id: 0,
     ),
     CardAnimalModel(
-      name: 'Nala',
-      breed: 'Vira lata',
+      name: 'Nala Arteira ',
+      day: 'Roubou a pelucia',
       details: 'Female, 2 years old',
-      km: '2.9 kms away',
+      km: 'Quarto',
       image: const Image(
         image: AssetImage(
-          ChallengeAssets.backGroundWhite,
+          ChallengeAssets.nalaOne,
         ),
       ),
       backgroundColorImage: ChallengeColors.white,
       id: 1,
     ),
     CardAnimalModel(
-      name: 'Charlie',
-      breed: 'Boston Terrier',
-      details: 'Male, 1.5 years old',
-      km: '2.6 kms away',
+      name: 'Nala Juíza',
+      day: 'Humana pra que isso?',
+      details: 'Female, 2 years old',
+      km: 'Cozinha',
       image: const Image(
         image: AssetImage(
-          ChallengeAssets.backGroundLightGreen,
+          ChallengeAssets.nalaTwo,
         ),
       ),
-      backgroundColorImage: ChallengeColors.greenWater,
-      id: 2,
+      backgroundColorImage: ChallengeColors.yellow,
+      id: 3,
     ),
     CardAnimalModel(
-      name: 'Max',
-      breed: 'Siberian Husky',
-      details: 'Male, 1 years old',
-      km: '2.9 kms away',
+      name: 'Nala de Graça',
+      day: 'Quase sexta Feira',
+      details: 'Female, 2 years old',
+      km: 'Jardim',
       image: const Image(
         image: AssetImage(
-          ChallengeAssets.backGroundBlue,
+          ChallengeAssets.nalaFour,
         ),
       ),
       backgroundColorImage: ChallengeColors.blue,
-      id: 03,
+      id: 2,
     ),
     CardAnimalModel(
-        name: 'Daisy',
-        breed: 'Maltese',
-        details: 'Female, 7 months old',
-        km: '2.9 kms away',
-        image: const Image(
-          image: AssetImage(
-            ChallengeAssets.backGroundPink,
-          ),
+      name: 'Nala Modelany',
+      day: 'Sexta né bb',
+      details: 'Female, 2 years old',
+      km: 'Parede de fotos',
+      image: const Image(
+        image: AssetImage(
+          ChallengeAssets.nalaFive,
         ),
-        backgroundColorImage: ChallengeColors.orange,
-        id: 04,)
+      ),
+      backgroundColorImage: ChallengeColors.orange,
+      id: 4,
+    ),
   ];
 }

@@ -14,6 +14,7 @@ class _DetailsAnimalPageState extends State<DetailsAnimalPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: AppBar(
@@ -36,10 +37,10 @@ class _DetailsAnimalPageState extends State<DetailsAnimalPage> {
         actions: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.only(right: 18),
+              padding: EdgeInsets.only(right: size.width * 0.066),
               child: Container(
-                height: 50,
-                width: 50,
+                height: size.width * 0.120,
+                width: size.width * 0.120,
                 decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                   color: theme.colorScheme.secondary.withOpacity(0.2),
@@ -63,15 +64,15 @@ class _DetailsAnimalPageState extends State<DetailsAnimalPage> {
           child: Column(
             children: [
               HeaderDetailsAnimalWidget(
-                name: 'Sparky',
-                breed: 'Golden Retiever',
+                name: 'Nala Modelany',
+                breed: 'Vira-lata',
                 genreIcon: Icon(
                   Icons.male,
                   color: theme.colorScheme.onPrimary,
-                  size: 35,
+                  size: 45,
                 ),
                 km: '2.5 kms away',
-                years: '8 months old',
+                years: '2 years old',
               ),
               const ContainerImageAnimalWidget(),
               Padding(
@@ -83,50 +84,59 @@ class _DetailsAnimalPageState extends State<DetailsAnimalPage> {
                       'About',
                       style: theme.textTheme.headlineSmall,
                     ),
+                    SizedBox(
+                      height: size.width * 0.021,
+                    ),
                     Text(
                       'Lorem Ipsum is simply dummy text of the printing, '
                       'and typesetting industry. Lorem Ipsum has been the '
-                      'industrys standard dummy text ever since the 1500s, when '
-                      'an unknown printer took a galley of type and scrambled it '
+                      'industrys standard dummy text ever since the 1500s, when'
+                      'an unknown printer took a galley of type and scrambled it'
                       'to make a type specimen book. It has survived not only '
                       'five centuries, but also the leap into electronic '
                       'typesetting, remaining essentially unchanged. It was '
                       'popularised in the 1960s with the release of Letraset '
-                      'sheets containing Lorem Ipsum passages, and more recently '
+                      'sheets containing Lorem Ipsum passages, and more recently'
                       'with desktop publishing software like Aldus PageMaker '
                       'including versions of Lorem Ipsum',
                       style: theme.textTheme.bodyLarge,
-                    ),
-                    const SizedBox(
-                      height: 25,
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 230, top: 10),
+                padding: EdgeInsets.only(
+                  left: size.width * 0.476,
+                ),
                 child: Container(
-                  height: 90,
-                  width: 190,
+                  height: size.width * 0.213,
+                  width: size.width * 0.80,
                   decoration: BoxDecoration(
                     color: theme.colorScheme.secondary,
                     borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(30),
+                      topLeft: Radius.circular(50),
                     ),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Icon(
-                        Icons.pets,
-                        color: theme.colorScheme.primary,
-                        size: 30,
-                      ),
-                      Text(
-                        'ADOPT',
-                        style: theme.textTheme.bodyMedium,
-                      ),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      left: size.width * 0.042,
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.pets,
+                          color: theme.colorScheme.primary,
+                          size: 25,
+                        ),
+                        SizedBox(
+                          width: size.width * 0.04,
+                        ),
+                        Text(
+                          'Amar doguinho',
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

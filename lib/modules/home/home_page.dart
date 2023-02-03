@@ -1,5 +1,5 @@
-import 'package:challenge_2/modules/home/widgets/cards_animal_widget.dart';
-import 'package:challenge_2/modules/home/widgets/filter_animals_widget.dart';
+import 'package:challenge_2/modules/home/widgets/card_animal_widget.dart';
+import 'package:challenge_2/modules/home/widgets/filter_animal_widget.dart';
 import 'package:challenge_2/modules/home/widgets/header_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -14,25 +14,24 @@ class HomePage extends StatelessWidget {
         size: size.width * 0.280,
       ),
       body: Container(
-        height: 800,
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
           color: Theme.of(context).colorScheme.tertiary,
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: const [
+            children: [
               Padding(
                 padding: EdgeInsets.only(
-                  top: 30,
-                  left: 12,
+                  top: size.width * 0.061,
+                  left: size.width * 0.074,
                 ),
-                child: FilterAnimalWidget(),
+                child: const FilterAnimalWidget(),
               ),
               SizedBox(
-                height: 20,
+                height: size.width * 0.044,
               ),
-              CardsAnimalWidget()
+              const CardAnimalWidget()
             ],
           ),
         ),

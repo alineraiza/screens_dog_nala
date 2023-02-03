@@ -12,24 +12,26 @@ class FeaturedImageWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Stack(
-      children:[ 
+      children: [
         Center(
           child: Container(
-          decoration: BoxDecoration(
-            borderRadius: const BorderRadius.all(Radius.circular(600)),
-            color: backGroundBigImage,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(600)),
+              color: backGroundBigImage,
+            ),
+            height: size.width * 0.94,
+            width: size.width * 0.94,
           ),
-          height: 380,
-          width: 380,
-              ),
         ),
-      Positioned(
-        top: -290,
-        left: -70,
-        right: -90,
-        child: bigImage,
-      )
-    ],);
+        Positioned(
+          top: -90,
+          left: -100,
+          right: -40,
+          child: bigImage,
+        )
+      ],
+    );
   }
 }

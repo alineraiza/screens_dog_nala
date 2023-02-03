@@ -17,6 +17,8 @@ class FilterAnimalsButtonWidget extends StatefulWidget {
 class _FilterAnimalsButtonWidgetState extends State<FilterAnimalsButtonWidget> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return InkWell(
       onTap: () {
         setState(() {
@@ -25,29 +27,32 @@ class _FilterAnimalsButtonWidgetState extends State<FilterAnimalsButtonWidget> {
         });
       },
       child: Container(
-        height: 50,
+        padding: EdgeInsets.symmetric(horizontal: size.width * 0.036),
         decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(Radius.circular(15)),
           color: widget.filterAnimalsModel.isSelected
               ? Theme.of(context).colorScheme.secondary
               : Theme.of(context).colorScheme.onSecondary,
         ),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              widget.filterAnimalsModel.icon,
-              const SizedBox(
-                width: 12,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            widget.filterAnimalsModel.icon,
+            if (widget.filterAnimalsModel.title != null) ...{
+              SizedBox(
+                width: size.width * 0.032,
               ),
-              if (widget.filterAnimalsModel.title != null)
-                Text(
-                  widget.filterAnimalsModel.title!,
-                  style: Theme.of(context).textTheme.titleMedium,
-                )
-            ],
-          ),
+              Text(
+                widget.filterAnimalsModel.title!,
+                style: widget.filterAnimalsModel.isSelected
+                    ? Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(color: Theme.of(context).colorScheme.primary)
+                    : Theme.of(context).textTheme.titleMedium!,
+              ),
+            }
+          ],
         ),
       ),
     );

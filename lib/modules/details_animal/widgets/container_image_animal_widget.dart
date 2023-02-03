@@ -9,38 +9,38 @@ class ContainerImageAnimalWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SizedBox(
-      height: 390,
       width: double.infinity,
       child: Stack(
-          children: const [
-            Positioned(
-              left: 120,
-              child: FeaturedImageWidget(
-                bigImage: Image(
-                 width: 1000,
-                 height: 1000,
-                  image: AssetImage(
-                    ChallengeAssets.imageFour,
-                  ),
+        children: [
+          const Positioned(
+            left: 145,
+            child: FeaturedImageWidget(
+              bigImage: Image(
+                width: 600,
+                height: 600,
+                image: AssetImage(
+                  ChallengeAssets.nalaFive,
                 ),
-                backGroundBigImage: ChallengeColors.yellow,
               ),
+              backGroundBigImage: ChallengeColors.orange,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 6),
-              child: ImageAnimalWidget (
-                //TODO(ALINE): Deixar a lista no meu model;
-                listImage: [
-                  ChallengeAssets.imageOne,
-                  ChallengeAssets.imageTwo,
-                  ChallengeAssets.imageThree,
-                  ChallengeAssets.imageFour,
-                ],
-              ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: size.width * 0.040),
+            child: const ImageAnimalWidget(
+              listImage: [
+                ChallengeAssets.nalaOne,
+                ChallengeAssets.nalaTwo,
+                ChallengeAssets.nalaThree,
+                ChallengeAssets.nalaFour,
+                ChallengeAssets.nalaFive,
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
+      ),
     );
   }
 }
