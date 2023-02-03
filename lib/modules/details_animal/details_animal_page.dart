@@ -88,11 +88,11 @@ class _DetailsAnimalPageState extends State<DetailsAnimalPage> {
                       height: size.width * 0.021,
                     ),
                     Text(
-                      'Lorem Ipsum is simply dummy text of the printing, '
-                      'and typesetting industry. Lorem Ipsum has been the '
-                      'industrys standard dummy text ever since the 1500s, when'
+                      'Doggo ipsum long doggo tungg long bois very good spot, '
+                      'Noodle horse long bois very hand that feed shibe '
+                      'you are doing me the shock doggorino puggo length '
                       'an unknown printer took a galley of type and scrambled it'
-                      'to make a type specimen book. It has survived not only '
+                      'Doggo wow such tempt lotsa pats  nice floof very taste '
                       'five centuries, but also the leap into electronic '
                       'typesetting, remaining essentially unchanged. It was '
                       'popularised in the 1960s with the release of Letraset '
